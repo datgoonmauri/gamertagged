@@ -9,7 +9,7 @@ import {
   faBell,
   faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
-import Logo from "./KenzieLogoGreen.png";
+import Logo from "src/react/components/KenzieLogoGreen.png";
 import { withAsyncAction } from "../HOCs";
 
 class Menu extends React.Component {
