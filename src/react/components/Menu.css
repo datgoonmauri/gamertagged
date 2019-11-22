@@ -1,20 +1,49 @@
 #menu {
-  background-color: lightskyblue;
+  background-color: #00356b;
+  padding: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 1em;
-  border-radius: 1em;
 }
 
 #menu-links {
   display: flex;
   padding-left: 1em;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  font-size: 18px;
 }
 
 #menu-links a {
-  padding-right: 0.5em;
-  color: darkblue;
-  text-decoration: underline;
+  padding-right: 2em;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+#menu-links a:active {
+  padding-right: 2em;
+  color: #a6ffdc;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#menu-links a.chosen {
+  color: #a6ffdc;
+  border-bottom: 1px solid #a6ffdc;
+}
+
+#logo {
+  padding: 8px;
+  background-color: #00356b;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navIcon {
+  margin-right: 5px;
 }
