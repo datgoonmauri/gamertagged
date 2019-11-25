@@ -27,20 +27,20 @@ class Menu extends React.Component {
         <div id="menu">
           {this.props.isAuthenticated && (
             <div id="menu-links">
-              <NavItem>
-                <NavLink to="/MessageFeed.js" activeClassName="chosen">
+              <NavItem tabs>
+                <NavLink to="./MessageFeed.js" activeClassName="chosen">
                   <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/Notifications.js" activeClassName="chosen">
+                <NavLink to="./Notifications.js" activeClassName="chosen">
                   <FontAwesomeIcon className="navIcon" icon={faBell} size="m" />
                   Notifications
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/Messages.js" activeClassName="chosen">
+                <NavLink to="./Messages.js" activeClassName="chosen">
                   <FontAwesomeIcon
                     className="navIcon"
                     icon={faEnvelope}
@@ -49,9 +49,8 @@ class Menu extends React.Component {
                   Messages
                 </NavLink>
               </NavItem>
-
               <NavItem>
-                <NavLink to="/Profile.js" activeClassName="chosen">
+                <NavLink to="./Profile.js" activeClassName="chosen">
                   <FontAwesomeIcon
                     className="navIcon"
                     icon={faUserCircle}
@@ -61,7 +60,7 @@ class Menu extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <Link to="/" onClick={this.handleLogout}>
+                <Link href="/" onClick={this.handleLogout}>
                   Logout
                 </Link>
               </NavItem>
