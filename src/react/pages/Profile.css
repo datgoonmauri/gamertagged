@@ -1,0 +1,102 @@
+.cardImg {
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: 25%;
+    margin-left: 3%;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    color: #00356B;
+    font-size: 20px;
+    margin-top: 20%;
+    margin-bottom: 0px;
+    position: fixed;
+    padding-top: 2%;
+}
+
+.bio {
+    color: #00356B;
+    font-size: 15px;
+    margin-top: 28%;
+    position: fixed;
+}
+.card {
+    
+    position: absolute;
+    width: 50%;
+    height: 20%;
+    background-color: white;
+    margin-left: 20%;
+    border: 1px solid gray;
+    
+}
+
+.follows {
+    margin-top: 50%;
+    margin-right: 2%;
+    padding: 1%;
+    background-color: #00356B;
+    color: #A6FFDC;
+    display: inline-block;
+    
+}
+.nav {
+    
+    padding-top: 5%;
+    border-bottom: 1px solid gray;
+    
+}
+.nav-item {
+    color: #00356B;
+    display: inline-block;
+    margin-left: 10%;
+    text-decoration: none;
+}
+.nav-item:hover {
+    background-color: #00356B;
+    color: white;
+    padding-right: 10px;
+}
+.container {
+    position: fixed;
+    
+    background-color: #DAE8F3;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.feedContainer {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    margin-left: 20%;
+    border: 1px solid lightgray;
+    margin-top: 33%;
+    position: fixed;
+    
+}
+
+.feedElement {
+    width: 99%;
+    height: 25%;
+    margin-left: 0%;
+    
+    position: relative;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    
+
+}
+
+.image {
+    position: absolute;
+    margin-top: 3%;
+    margin-left: 3%;
+    border-radius: 50%;
+}

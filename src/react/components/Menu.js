@@ -1,15 +1,6 @@
 import React from "react";
-import { Link, NavLink } from ".";
-import { Nav, NavItem } from "shards-react";
+import { Link } from ".";
 import "./Menu.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faEnvelope,
-  faBell,
-  faUserCircle
-} from "@fortawesome/free-solid-svg-icons";
-import Logo from "src/react/components/KenzieLogoGreen.png";
 import { withAsyncAction } from "../HOCs";
 
 class Menu extends React.Component {
@@ -20,55 +11,17 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <Nav>
-        <div id="logo">
-          <img src={Logo} alt="Logo" width="50px" height="50px" />
-        </div>
-        <div id="menu">
-          {this.props.isAuthenticated && (
-            <div id="menu-links">
-              <NavItem>
-                <NavLink to="/MessageFeed.js" activeClassName="chosen">
-                  <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/Notifications.js" activeClassName="chosen">
-                  <FontAwesomeIcon className="navIcon" icon={faBell} size="m" />
-                  Notifications
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="/Messages.js" activeClassName="chosen">
-                  <FontAwesomeIcon
-                    className="navIcon"
-                    icon={faEnvelope}
-                    size="m"
-                  />
-                  Messages
-                </NavLink>
-              </NavItem>
-
-              <NavItem>
-                <NavLink to="/Profile.js" activeClassName="chosen">
-                  <FontAwesomeIcon
-                    className="navIcon"
-                    icon={faUserCircle}
-                    size="m"
-                  />
-                  Profile
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <Link to="/" onClick={this.handleLogout}>
-                  Logout
-                </Link>
-              </NavItem>
-            </div>
-          )}
-        </div>
-      </Nav>
+      <div id="menu">
+        <h1>Kwitter</h1>
+        {this.props.isAuthenticated && (
+          <div id="menu-links">
+            <Link to="/messagefeed">Message Feed</Link>
+            <Link to="/" onClick={this.handleLogout}>
+              Logout
+            </Link>
+          </div>
+        )}
+      </div>
     );
   }
 }
