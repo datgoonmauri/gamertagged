@@ -1,7 +1,7 @@
 .cardImg {
     border: 1px solid black;
     border-radius: 50%;
-    margin-top: 25%;
+    margin-top: 15%;
     margin-left: 3%;
     position: absolute;
     max-width: 100%;
@@ -11,7 +11,7 @@
 .title {
     color: #00356B;
     font-size: 20px;
-    margin-top: 20%;
+    margin-top: 12%;
     margin-bottom: 0px;
     position: fixed;
     padding-top: 2%;
@@ -20,7 +20,7 @@
 .bio {
     color: #00356B;
     font-size: 15px;
-    margin-top: 28%;
+    margin-top: 16%;
     position: fixed;
 }
 .card {
@@ -35,7 +35,7 @@
 }
 
 .follows {
-    margin-top: 50%;
+    margin-top: 35%;
     margin-right: 2%;
     padding: 1%;
     background-color: #00356B;
@@ -75,7 +75,7 @@
     background-color: white;
     margin-left: 20%;
     border: 1px solid lightgray;
-    margin-top: 33%;
+    margin-top: 25%;
     position: fixed;
     
 }
