@@ -1,15 +1,6 @@
 import React from "react";
-import { Link, NavLink } from ".";
-import { Nav, NavItem } from "shards-react";
+import { Link } from ".";
 import "./Menu.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faEnvelope,
-  faBell,
-  faUserCircle
-} from "@fortawesome/free-solid-svg-icons";
-import Logo from "src/react/components/KenzieLogoGreen.png";
 import { withAsyncAction } from "../HOCs";
 
 class Menu extends React.Component {
