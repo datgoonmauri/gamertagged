@@ -1,6 +1,7 @@
 import React from "react";
 import { Spinner } from ".";
 import { withAsyncAction } from "../HOCs";
+import { Button, Form, FormInput, FormGroup } from "shards-react";
 import "./LoginForm.css";
 
 class LoginForm extends React.Component {
@@ -19,28 +20,36 @@ class LoginForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <React.Fragment>
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
+        <Form id="login-form" onSubmit={this.handleLogin}>
+          <FormGroup>
+            <label htmlFor="username">Username</label>
+            <FormInput
+              type="text"
+              name="username"
+              autoFocus
+              required
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <label htmlFor="password">Password</label>
+            <FormInput
+              type="password"
+              name="password"
+              required
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <Button theme="primary" type="submit" disabled={loading} id="submit">
             Login
-          </button>
-        </form>
+          </Button>
+        </Form>
         {loading && <Spinner name="circle" color="blue" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+        {error && (
+          <p id="error" style={{ color: "red" }}>
+            {error.message}
+          </p>
+        )}
       </React.Fragment>
     );
   }
