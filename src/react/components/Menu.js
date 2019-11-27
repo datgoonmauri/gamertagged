@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, NavLink } from ".";
-import { Nav, NavItem } from "shards-react";
+import { Link } from ".";
+import { Nav, NavItem, NavLink } from "shards-react";
 import "./Menu.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Logo from "./KenzieLogoGreen.png";
 import { withAsyncAction } from "../HOCs";
+import LikeButton from "./LikeButton"
+
 
 class Menu extends React.Component {
   handleLogout = event => {

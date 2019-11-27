@@ -11,6 +11,8 @@ import {
   CardBody,
   Button
 } from "shards-react";
+import ButtonExampleToggle from "../components/LikeButton";
+
 
 class Profile extends React.Component {
   render() {
@@ -48,8 +50,9 @@ class Profile extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink className="nav-item" href="#">
-                  Likes
+                  <Button className="ui toggle button" aria-pressed="true">Like</Button>
                 </NavLink>
+
               </NavItem>
             </Nav>
           </Card>
