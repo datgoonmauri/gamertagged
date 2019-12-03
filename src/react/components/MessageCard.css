@@ -1,0 +1,12 @@
+div.card {
+  margin-top: 10px;
+  background-color: whitesmoke;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 20px;
+}

@@ -5,6 +5,8 @@ import { Nav } from "shards-react";
 import Logo from "./KenzieLogoGreen.png";
 import { faHome, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { withAsyncAction } from "../HOCs";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
 import "./Menu.css";
 
 class Menu extends React.Component {
