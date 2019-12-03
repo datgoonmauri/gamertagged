@@ -5,6 +5,7 @@ import Logo from "./KenzieLogoGreen.png";
 import { withAsyncAction } from "../HOCs";
 import LikeButton from "./LikeButton";
 
+
 class Menu extends React.Component {
   handleLogout = event => {
     event.preventDefault();
@@ -38,6 +39,7 @@ class Menu extends React.Component {
               <NavLink href="/" onClick={this.handleLogout}>
                 Logout
               </NavLink>
+
             </Nav>
           </>
         )}

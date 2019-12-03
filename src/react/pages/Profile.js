@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "../components";
+import { Menu, MessageList,MessageCard} from "../components";
 // import "./Profile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
@@ -48,6 +48,8 @@ class Profile extends React.Component {
           <Card className="feedElement">
             <CardImg src="" className="image" />
           </Card>
+          <MessageCard />
+          <MessageList/>
         </div>
       </>
     );

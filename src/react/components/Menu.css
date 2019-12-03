@@ -34,3 +34,7 @@ a.nav-link.active {
 .navIcon {
   margin-right: 5px;
 }
+div.messagecard{
+background-color: whitesmoke;
+position: static;
+}
