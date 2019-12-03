@@ -1,15 +1,16 @@
 import React from "react";
-import {  Menu, MessageList ,MessageCard} from "../components";
+import { Menu, MessageList } from "../components";
 import { userIsAuthenticated } from "../HOCs";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
 
 class MessageFeed extends React.Component {
   render() {
     return (
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
-		<h2>Message Feed</h2>
-		<MessageCard />
-		<MessageList />
+        <h2 style={{ margin: "auto" }}>Message Feed</h2>
+        <MessageList />
       </>
     );
   }

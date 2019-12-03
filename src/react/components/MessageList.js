@@ -1,6 +1,8 @@
 import React from "react";
 import MessageCard from "./MessageCard";
 import { withAsyncAction } from "../HOCs";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
 
 // const messages = [
 //   {
