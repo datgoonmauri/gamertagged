@@ -1,13 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function LikeButton() {
-	return (
-		<button>
-			like
-		</button>
-	)
+  return <button>like</button>;
 }
 
-export default LikeButton
-
- 
+export default LikeButton;

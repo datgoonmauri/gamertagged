@@ -2,9 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Nav, NavLink } from "shards-react";
 import Logo from "./KenzieLogoGreen.png";
+import { faHome, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { withAsyncAction } from "../HOCs";
 import LikeButton from "./LikeButton";
-
+import "./Menu.css";
 
 class Menu extends React.Component {
   handleLogout = event => {
@@ -39,7 +40,6 @@ class Menu extends React.Component {
               <NavLink href="/" onClick={this.handleLogout}>
                 Logout
               </NavLink>
-
             </Nav>
           </>
         )}

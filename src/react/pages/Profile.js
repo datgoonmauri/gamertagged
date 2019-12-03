@@ -1,20 +1,11 @@
 import React from "react";
-import { Menu, MessageList,MessageCard} from "../components";
+import { Menu, MessageList, MessageCard } from "../components";
 // import "./Profile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import { userIsAuthenticated } from "../HOCs";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardImg,
-  CardBody,
-  Button
-} from "shards-react";
-import ButtonExampleToggle from "../components/LikeButton";
-
 import { Card, CardHeader, CardTitle, CardImg, CardBody } from "shards-react";
+import ButtonExampleToggle from "../components/LikeButton";
 
 class Profile extends React.Component {
   render() {
@@ -35,22 +26,8 @@ class Profile extends React.Component {
             </Card>
           </div>
         </div>
-        <div className="feedContainer">
-          <Card className="feedElement">
-            <CardImg src="" className="image" />
-          </Card>
-          <Card className="feedElement">
-            <CardImg src="" className="image" />
-          </Card>
-          <Card className="feedElement">
-            <CardImg src="" className="image" />
-          </Card>
-          <Card className="feedElement">
-            <CardImg src="" className="image" />
-          </Card>
-          <MessageCard />
-          <MessageList/>
-        </div>
+        <MessageCard />
+        <MessageList />
       </>
     );
   }
