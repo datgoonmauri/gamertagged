@@ -1,16 +1,13 @@
 import React from "react";
-import { Link, NavLink } from ".";
-import { Nav, NavItem } from "shards-react";
+import { Nav, NavLink } from "shards-react";
 import "./Menu.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faEnvelope,
-  faBell,
-  faUserCircle
-} from "@fortawesome/free-solid-svg-icons";
+import { faHome, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import Logo from "./KenzieLogoGreen.png";
 import { withAsyncAction } from "../HOCs";
+
 
 class Menu extends React.Component {
   handleLogout = event => {
@@ -20,54 +17,36 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <Nav>
+      <div>
         <div id="logo">
           <img src={Logo} alt="Logo" width="50px" height="50px" />
         </div>
-        <div id="menu">
-          {this.props.isAuthenticated && (
-            <div id="menu-links">
-              <NavItem tabs>
-                <NavLink to="./MessageFeed.js" activeClassName="chosen">
-                  <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="./Notifications.js" activeClassName="chosen">
-                  <FontAwesomeIcon className="navIcon" icon={faBell} size="m" />
-                  Notifications
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="./Messages.js" activeClassName="chosen">
-                  <FontAwesomeIcon
-                    className="navIcon"
-                    icon={faEnvelope}
-                    size="m"
-                  />
-                  Messages
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink to="./Profile.js" activeClassName="chosen">
-                  <FontAwesomeIcon
-                    className="navIcon"
-                    icon={faUserCircle}
-                    size="m"
-                  />
-                  Profile
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <Link href="/" onClick={this.handleLogout}>
-                  Logout
-                </Link>
-              </NavItem>
-            </div>
-          )}
-        </div>
-      </Nav>
+
+        {this.props.isAuthenticated && (
+          <>
+            <Nav navbar>
+              <NavLink href="/MessageFeed" activeClassName="chosen">
+                <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
+                Home
+              </NavLink>
+
+              <NavLink active href="/Profile" activeClassName="chosen">
+                <FontAwesomeIcon
+                  className="navIcon"
+                  icon={faUserCircle}
+                  size="m"
+                />
+                Profile
+              </NavLink>
+
+              <NavLink href="/" onClick={this.handleLogout}>
+                Logout
+              </NavLink>
+
+            </Nav>
+          </>
+        )}
+      </div>
     );
   }
 }

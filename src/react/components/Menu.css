@@ -1,45 +1,24 @@
-#menu {
+ul.navbar-nav {
   background-color: #00356b;
-  padding: 12px;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
-#menu-links {
+li.navitem {
+  margin: auto;
+}
+
+a.nav-link {
   display: flex;
-  padding-left: 1em;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  font-size: 18px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
-#menu-links a {
-  margin-right: 2em;
-  padding-bottom: 3px;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-#menu-links a:active {
+a.nav-link.active {
   color: #a6ffdc;
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-#menu-links a:hover {
-  color: #a6ffdc;
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-#menu-links a.chosen {
-  color: #a6ffdc;
-  border-bottom: 3px solid #a6ffdc;
 }
 
 #logo {
@@ -54,4 +33,8 @@
 
 .navIcon {
   margin-right: 5px;
+}
+div.messagecard{
+background-color: whitesmoke;
+position: static;
 }
