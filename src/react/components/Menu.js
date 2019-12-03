@@ -1,10 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Nav, NavLink } from "shards-react";
+import { NavLink } from "react-router-dom";
+import { Nav } from "shards-react";
 import Logo from "./KenzieLogoGreen.png";
 import { faHome, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { withAsyncAction } from "../HOCs";
-import LikeButton from "./LikeButton";
 import "./Menu.css";
 
 class Menu extends React.Component {
@@ -23,12 +23,18 @@ class Menu extends React.Component {
         {this.props.isAuthenticated && (
           <>
             <Nav navbar>
-              <NavLink href="/MessageFeed" activeClassName="chosen">
+              <NavLink
+                to={`/messagefeed/${this.props.username}`}
+                activeClassName="chosen"
+              >
                 <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
                 Home
               </NavLink>
 
-              <NavLink active href="/Profile" activeClassName="chosen">
+              <NavLink
+                to={`/profile/${this.props.username}`}
+                activeClassName="chosen"
+              >
                 <FontAwesomeIcon
                   className="navIcon"
                   icon={faUserCircle}
@@ -37,7 +43,7 @@ class Menu extends React.Component {
                 Profile
               </NavLink>
 
-              <NavLink href="/" onClick={this.handleLogout}>
+              <NavLink to="/" onClick={this.handleLogout}>
                 Logout
               </NavLink>
             </Nav>
