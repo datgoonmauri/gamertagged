@@ -1,19 +1,19 @@
 #message-form {
-    display: flex;
-    flex-direction: row;
-    max-width: 30em;
-    margin: auto;
-    border-radius: 30%;
-  }
-  
-  #submit {
-    margin-top: 20px;
-  }
-  
-  #error {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 20px;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  max-width: 30em;
+  margin: auto;
+  border-radius: 30%;
+  height: 50px;
+}
+
+#submit {
+  margin-top: 20px;
+}
+
+#error {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+}

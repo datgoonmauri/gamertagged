@@ -16,17 +16,15 @@ import "./MessageCard.css";
 class MessageCard extends React.Component {
   render() {
     return (
-      <div class="container">
-        <Card style={{ maxWidth: "400px", margin: "auto" }}>
-          <CardBody>
-            <Link to={`/profile/${this.props.username}`}>
-              <CardTitle>{this.props.username}</CardTitle>
-            </Link>
-            <p>{this.props.text}</p>
-            <p>{new Date(this.props.createdAt).toDateString()}</p>
-          </CardBody>
-        </Card>
-      </div>
+      <Card outline style={{ maxWidth: "30em", margin: "auto" }}>
+        <CardBody>
+          <Link to={`/profile/${this.props.username}`}>
+            <CardTitle>{this.props.username}</CardTitle>
+          </Link>
+          <p>{this.props.text}</p>
+          <p>{new Date(this.props.createdAt).toDateString()}</p>
+        </CardBody>
+      </Card>
     );
   }
 }
