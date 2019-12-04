@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MessageList } from "../components";
+import { Menu, MessageList, CreateMessageForm } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
@@ -10,6 +10,7 @@ class MessageFeed extends React.Component {
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2 style={{ margin: "auto" }}>Message Feed</h2>
+        <CreateMessageForm />
         <MessageList />
       </>
     );
