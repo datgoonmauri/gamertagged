@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from ".";
-import { Card, CardBody, CardTitle } from "shards-react";
+import { Card, CardBody, CardSubtitle } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
-import "./MessageCard.css";
 
 // const fakeMessage = {
 //   id: 937,
@@ -16,13 +15,17 @@ import "./MessageCard.css";
 class MessageCard extends React.Component {
   render() {
     return (
-      <Card outline style={{ maxWidth: "30em", margin: "auto" }}>
+      <Card style={{ maxWidth: "30em", margin: "auto" }}>
         <CardBody>
           <Link to={`/profile/${this.props.username}`}>
-            <CardTitle>{this.props.username}</CardTitle>
+            <CardSubtitle>{this.props.username}</CardSubtitle>
           </Link>
-          <p>{this.props.text}</p>
-          <p>{new Date(this.props.createdAt).toDateString()}</p>
+          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+            {this.props.text}
+          </p>
+          <p style={{ fontSize: "14px" }}>
+            {new Date(this.props.createdAt).toDateString()}
+          </p>
         </CardBody>
       </Card>
     );

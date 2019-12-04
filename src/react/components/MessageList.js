@@ -3,6 +3,7 @@ import MessageCard from "./MessageCard";
 import { withAsyncAction } from "../HOCs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
+import "./MessageList.css";
 
 class MessageList extends React.Component {
   componentDidMount() {
@@ -14,25 +15,18 @@ class MessageList extends React.Component {
       this.props.result &&
       this.props.result.messages.map(message => {
         return (
-          <MessageCard
-            key={message.id}
-            username={message.username}
-            text={message.text}
-            createdAt={message.createdAt}
-          />
+          <div class="MessageCard">
+            <MessageCard
+              key={message.id}
+              username={message.username}
+              text={message.text}
+              createdAt={message.createdAt}
+            />
+          </div>
         );
       })
     );
   }
 }
 
-/*
-mapStateToProps
-  loading
-  error
-  result
-
-mapDispatchToProps
-  getMessages
-*/
 export default withAsyncAction("messages", "getMessages")(MessageList);
