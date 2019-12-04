@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, CreateMessageForm, MessageList, UserCard } from "../components";
+import { Menu, CreateMessageForm, MessageList} from "../components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./Profile.css";
@@ -13,7 +13,7 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2> </h2>
        
-        <UserCard className="userCard"/>
+        {/* <UserCard className="userCard"/> */}
 
         <CreateMessageForm />
         <MessageList />

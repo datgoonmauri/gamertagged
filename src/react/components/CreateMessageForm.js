@@ -21,7 +21,7 @@ class CreateMessageForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <React.Fragment>
-        <Form id="login-form" onSubmit={this.handleLogin}>
+        <Form id="message-form" onSubmit={this.handleLogin}>
           
           <FormInput
             placeholder="What's on your mind?"
