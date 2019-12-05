@@ -19,12 +19,19 @@ class CreateMessageForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
+  // countText = () => {
+  //   let text = document.getElementById("textArea");
+  //   let count = text.value.length;
+  //   console.log(count);
+  // };
+
   render() {
     const { loading, error } = this.props;
     return (
       <React.Fragment>
         <Form id="message-form" onSubmit={this.handleLogin}>
           <FormTextarea
+            id="textArea"
             maxlength="140"
             placeholder="What's on your mind?"
             type="text"
@@ -34,6 +41,7 @@ class CreateMessageForm extends React.Component {
             onChange={this.handleChange}
             value={this.state.text}
           />
+
           <Button type="submit" disabled={loading}>
             Post
           </Button>

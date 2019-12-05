@@ -17,6 +17,12 @@ class UserCard extends React.Component {
   componentDidMount() {
     this.props.getUser(this.props.username);
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.username !== prevProps.username) {
+      this.props.getUser(this.props.username);
+    }
+  }
   render() {
     if (this.props.result === null) {
       return <Spinner />;
