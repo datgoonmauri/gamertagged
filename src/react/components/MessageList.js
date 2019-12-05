@@ -11,7 +11,16 @@ class MessageList extends React.Component {
     this.props.getMessages(this.props.username);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.username !== prevProps.username) {
+      this.props.getMessages(this.props.username);
+    }
+  }
   render() {
+    // if (this.props.result.count === 0) {
+    //   return <p> You Have No Messages </p>;
+    // }
+
     if (this.props.result === null) {
       return <Spinner style={{ margin: "auto" }} />;
     }
