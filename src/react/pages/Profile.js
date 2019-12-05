@@ -10,11 +10,11 @@ class Profile extends React.Component {
     return (
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <div class="container">
-          <div class="UserCard">
+        <div className="container">
+          <div className="UserCard">
             <UserCard username={this.props.match.params.username} />
           </div>
-          <div class="MessageList">
+          <div className="MessageList">
             <h4 style={{ margin: "auto" }}> Your Posts </h4>{" "}
             <MessageList username={this.props.match.params.username} />
           </div>

@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import { Nav } from "shards-react";
 import Logo from "./KenzieLogoGreen.png";
-import { faHome, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHome,
+  faUserCircle,
+  faSignOutAlt
+} from "@fortawesome/free-solid-svg-icons";
 import { withAsyncAction } from "../HOCs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
@@ -29,7 +33,7 @@ class Menu extends React.Component {
                 to={`/messagefeed/${this.props.username}`}
                 activeClassName="chosen"
               >
-                <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
+                <FontAwesomeIcon className="navIcon" icon={faHome} size="sm" />
                 Home
               </NavLink>
 
@@ -40,12 +44,18 @@ class Menu extends React.Component {
                 <FontAwesomeIcon
                   className="navIcon"
                   icon={faUserCircle}
-                  size="m"
+                  size="sm"
                 />
                 Profile
               </NavLink>
 
               <NavLink to="/" onClick={this.handleLogout}>
+                {" "}
+                <FontAwesomeIcon
+                  className="navIcon"
+                  icon={faSignOutAlt}
+                  size="sm"
+                />
                 Logout
               </NavLink>
             </Nav>
