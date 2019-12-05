@@ -1,7 +1,7 @@
 import React from "react";
 import { Spinner } from ".";
 import { withAsyncAction } from "../HOCs";
-import { Form, Button, FormInput } from "shards-react";
+import { Form, Button, FormTextarea } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./CreateMessageForm.css";
@@ -24,7 +24,8 @@ class CreateMessageForm extends React.Component {
     return (
       <React.Fragment>
         <Form id="message-form" onSubmit={this.handleLogin}>
-          <FormInput
+          <FormTextarea
+            maxlength="140"
             placeholder="What's on your mind?"
             type="text"
             name="text"

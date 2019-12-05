@@ -4,6 +4,7 @@ import { withAsyncAction } from "../HOCs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./MessageList.css";
+import { Spinner } from ".";
 
 class MessageList extends React.Component {
   componentDidMount() {
@@ -12,7 +13,7 @@ class MessageList extends React.Component {
 
   render() {
     if (this.props.result === null) {
-      return <p>You Don't Have any Posts yet</p>;
+      return <Spinner style={{ margin: "auto" }} />;
     }
     return (
       this.props.result &&
