@@ -15,8 +15,8 @@ class Profile extends React.Component {
             <UserCard username={this.props.match.params.username} />
           </div>
           <div class="MessageList">
-            {" "}
-            <MessageList />
+            <h4 style={{ margin: "auto" }}> Your Posts </h4>{" "}
+            <MessageList username={this.props.match.params.username} />
           </div>
         </div>
       </>

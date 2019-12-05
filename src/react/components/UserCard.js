@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import { withAsyncAction } from "../HOCs";
 import { Spinner } from ".";
+import { Link } from ".";
 import {
   Card,
   CardHeader,
@@ -38,7 +39,9 @@ class UserCard extends React.Component {
               className="cardImg"
             />
             <CardBody>
-              <CardTitle className="title">{user.displayName}</CardTitle>
+              <Link to={`/profile/${this.props.username}`}>
+                <CardTitle className="title">{user.displayName}</CardTitle>
+              </Link>
               <div className="bio">
                 {user.about ? user.about : "You don't have a bio yet"}
               </div>

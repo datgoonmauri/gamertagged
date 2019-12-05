@@ -9,5 +9,9 @@ div.MessageList {
 }
 
 div.UserCard {
-  margin-top: 20px;
+  margin-top: 61px;
+}
+
+h4 {
+  text-align: center;
 }
