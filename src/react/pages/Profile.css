@@ -1,9 +1,17 @@
 div.container {
-  margin-top: 20px;
-  margin-top: 10px;
-  max-width: 300px;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
+div.MessageList {
+  margin-top: 20px;
+}
+
+div.UserCard {
+  margin-top: 61px;
+}
+
+h4 {
+  text-align: center;
+}

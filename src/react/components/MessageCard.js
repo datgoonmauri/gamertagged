@@ -1,34 +1,31 @@
 import React from "react";
 import { Link } from ".";
-import { Card, CardBody, CardTitle } from "shards-react";
+import { Card, CardBody, CardSubtitle } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
-import "./MessageCard.css";
-
-// const fakeMessage = {
-//   id: 937,
-//   text: "Hello World!",
-//   username: "testuser",
-//   createdAt: "2019-11-18T15:52:56.879Z",
-//   likes: []
-// };
+import DeleteMessage from "../components/DeleteMessage";
 
 class MessageCard extends React.Component {
   render() {
     return (
-      <div class="container">
-        <Card style={{ maxWidth: "400px", margin: "auto" }}>
-          <CardBody>
-            <Link to={`/profile/${this.props.username}`}>
-              <CardTitle>{this.props.username}</CardTitle>
-            </Link>
-            <p>{this.props.text}</p>
-            <p>{new Date(this.props.createdAt).toDateString()}</p>
-          </CardBody>
-        </Card>
-      </div>
+      <Card style={{ width: "30em", margin: "auto" }}>
+        <CardBody>
+          <Link to={`/profile/${this.props.username}`}>
+            <CardSubtitle>{this.props.username}</CardSubtitle>
+          </Link>
+          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+            {this.props.text}
+          </p>
+          <p style={{ fontSize: "14px" }}>
+            {new Date(this.props.createdAt).toDateString()}
+          </p>
+          <DeleteMessage messageId={this.props.messageId} />
+        </CardBody>
+      </Card>
     );
   }
 }
 
 export default MessageCard;
+
+
