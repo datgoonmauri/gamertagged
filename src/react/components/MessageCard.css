@@ -2,6 +2,7 @@ div.card {
   margin-top: 10px;
   background-color: whitesmoke;
   display: flex;
+  width: 2000px;
 }
 
 .container {
