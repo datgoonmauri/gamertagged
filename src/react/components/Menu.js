@@ -29,7 +29,7 @@ class Menu extends React.Component {
                 to={`/messagefeed/${this.props.username}`}
                 activeClassName="chosen"
               >
-                <FontAwesomeIcon className="navIcon" icon={faHome} size="m" />
+                <FontAwesomeIcon className="navIcon" icon={faHome} size="sm" />
                 Home
               </NavLink>
 
@@ -40,7 +40,7 @@ class Menu extends React.Component {
                 <FontAwesomeIcon
                   className="navIcon"
                   icon={faUserCircle}
-                  size="m"
+                  size="sm"
                 />
                 Profile
               </NavLink>

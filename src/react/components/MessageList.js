@@ -11,11 +11,14 @@ class MessageList extends React.Component {
   }
 
   render() {
+    if (this.props.result === null) {
+      return <p>You Don't Have any Posts yet</p>;
+    }
     return (
       this.props.result &&
       this.props.result.messages.map(message => {
         return (
-          <div class="MessageCard">
+          <div className="MessageCard">
             <MessageCard
               key={message.id}
               username={message.username}
