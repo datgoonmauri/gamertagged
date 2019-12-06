@@ -11,9 +11,13 @@ class MessageFeed extends React.Component {
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         {/* <h2 style={{ margin: "auto" }}>Message Feed</h2> */}
-        <div class="wrapper">
+        <div className="wrapper">
           <CreateMessageForm />
         </div>
+        <div className="textCount">
+          <div id="message">140 / 140</div>
+        </div>
+
         <MessageList />
       </>
     );
