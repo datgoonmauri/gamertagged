@@ -34,3 +34,9 @@ ul.navbar-nav > a:hover {
 .navIcon {
   margin-right: 5px;
 }
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

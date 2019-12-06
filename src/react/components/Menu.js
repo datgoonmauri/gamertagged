@@ -21,7 +21,7 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="header">
         <div id="logo">
           <img src={Logo} alt="Logo" width="50px" height="50px" />
         </div>

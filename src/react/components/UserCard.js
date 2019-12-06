@@ -66,4 +66,3 @@ class UserCard extends React.Component {
 }
 
 export default withAsyncAction("users", "getUser")(UserCard);
-
