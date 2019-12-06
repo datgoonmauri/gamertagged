@@ -22,7 +22,7 @@ class MessageList extends React.Component {
     // }
 
     if (this.props.result === null) {
-      return <Spinner style={{ margin: "auto" }} />;
+      return <Spinner style={{ display: "flex", justifyContent: "center" }} />;
     }
     return (
       this.props.result &&
@@ -42,6 +42,5 @@ class MessageList extends React.Component {
     );
   }
 }
-
 
 export default withAsyncAction("messages", "getMessages")(MessageList);

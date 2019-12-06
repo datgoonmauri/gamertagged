@@ -57,9 +57,9 @@ export const postUser = registerData => dispatch => {
 
 export const deleteUser = () => (dispatch, getState) => {
   dispatch({ type: DELETEUSER.START });
-  
+
   const { username, token } = getState().auth.login.result;
-  
+
   return fetch(url + "/" + username, {
     method: "DELETE",
     headers: { Authorization: "Bearer " + token, ...jsonHeaders }
@@ -74,4 +74,4 @@ export const deleteUser = () => (dispatch, getState) => {
     .catch(err => {
       return Promise.reject(dispatch({ type: DELETEUSER.FAIL, payload: err }));
     });
-}
+};

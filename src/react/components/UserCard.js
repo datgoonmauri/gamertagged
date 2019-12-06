@@ -12,7 +12,7 @@ import {
   CardBody,
   CardFooter
 } from "shards-react";
-import DeleteUserButton from "../components/DeleteUserButton"
+import DeleteUserButton from "../components/DeleteUserButton";
 
 class UserCard extends React.Component {
   componentDidMount() {

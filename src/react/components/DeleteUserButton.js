@@ -1,6 +1,8 @@
 import React from "react";
 // import { Spinner } from ".";
 import { withAsyncAction, connect } from "../HOCs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
@@ -19,15 +21,25 @@ class DeleteUserButton extends React.Component {
     return (
       <React.Fragment>
         {this.props.username === this.props.loggedInUsername && (
-          <Button onClick={this.handleDeleteUser}>Delete Your Account</Button>
+          <Button
+            outline
+            theme="danger"
+            size="sm"
+            onClick={this.handleDeleteUser}
+          >
+            <FontAwesomeIcon icon={faTrashAlt} size="lg"></FontAwesomeIcon>{" "}
+            Delete Your Account
+          </Button>
         )}
       </React.Fragment>
     );
   }
 }
 const mapStateToProps = state => {
-    return {
-        loggedInUsername: state.auth.login.result.username
-    };
+  return {
+    loggedInUsername: state.auth.login.result.username
+  };
 };
-export default connect(mapStateToProps)(withAsyncAction("users", "deleteUser")(DeleteUserButton));
+export default connect(mapStateToProps)(
+  withAsyncAction("users", "deleteUser")(DeleteUserButton)
+);
