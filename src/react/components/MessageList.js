@@ -34,6 +34,7 @@ class MessageList extends React.Component {
               username={message.username}
               text={message.text}
               createdAt={message.createdAt}
+              messageId={message.id}
             />
           </div>
         );
@@ -41,5 +42,6 @@ class MessageList extends React.Component {
     );
   }
 }
+
 
 export default withAsyncAction("messages", "getMessages")(MessageList);

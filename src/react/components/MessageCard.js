@@ -3,6 +3,7 @@ import { Link } from ".";
 import { Card, CardBody, CardSubtitle } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
+import DeleteMessage from "../components/DeleteMessage";
 
 class MessageCard extends React.Component {
   render() {
@@ -18,6 +19,7 @@ class MessageCard extends React.Component {
           <p style={{ fontSize: "14px" }}>
             {new Date(this.props.createdAt).toDateString()}
           </p>
+          <DeleteMessage messageId={this.props.messageId} />
         </CardBody>
       </Card>
     );
@@ -25,3 +27,5 @@ class MessageCard extends React.Component {
 }
 
 export default MessageCard;
+
+

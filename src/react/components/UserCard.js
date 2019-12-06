@@ -12,6 +12,7 @@ import {
   CardBody,
   CardFooter
 } from "shards-react";
+import DeleteUserButton from "../components/DeleteUserButton"
 
 class UserCard extends React.Component {
   componentDidMount() {
@@ -55,6 +56,7 @@ class UserCard extends React.Component {
             <CardFooter>
               <p>Created: {new Date(user.createdAt).toDateString()}</p>
               <p>Last Updated: {new Date(user.updatedAt).toDateString()}</p>
+              <DeleteUserButton username={this.props.username} />
             </CardFooter>
           </Card>
         </div>

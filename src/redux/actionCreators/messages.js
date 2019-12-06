@@ -1,6 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { GETMESSAGES, POSTMESSAGE } from "../actionTypes";
-
+import { GETMESSAGES, POSTMESSAGE, DELETEMESSAGE } from "../actionTypes";
 
 const url = domain + "/messages";
 
@@ -54,5 +53,32 @@ const _postMessage = postMessageBody => (dispatch, getState) => {
 export const postMessage = postMessageBody => (dispatch, getState) => {
   return dispatch(_postMessage(postMessageBody)).then(() =>
     dispatch(getMessages())
-)
-}
+  );
+};
+
+export const deleteMessage = (messageId) => (dispatch, getState) => {
+  dispatch({
+    type: DELETEMESSAGE.START
+  });
+
+  // const messageId = getState().auth.login.result.messages;
+  const token = getState().auth.login.result.token;
+  
+
+  return fetch(url + "/" + messageId, {
+    method: "DELETE",
+    headers: { Authorization: "Bearer " + token, ...jsonHeaders }
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: DELETEMESSAGE.SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(
+        dispatch({ type: DELETEMESSAGE.FAIL, payload: err })
+      );
+    });
+};

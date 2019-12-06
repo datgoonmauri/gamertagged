@@ -42,6 +42,7 @@ class CreateMessageForm extends React.Component {
             onChange={this.handleChange}
             value={this.state.text}
           />
+
           <Button type="submit" disabled={loading}>
             Post
           </Button>
