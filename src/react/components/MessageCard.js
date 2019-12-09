@@ -4,6 +4,7 @@ import { Card, CardBody, CardSubtitle } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import DeleteMessage from "../components/DeleteMessage";
+import { connect } from "../HOCs";
 
 class MessageCard extends React.Component {
   render() {
@@ -19,13 +20,17 @@ class MessageCard extends React.Component {
           <p style={{ fontSize: "14px" }}>
             {new Date(this.props.createdAt).toDateString()}
           </p>
-          <DeleteMessage messageId={this.props.messageId} />
+          {this.props.username === this.props.loggedInUsername && (<DeleteMessage messageId={this.props.messageId} />)}
         </CardBody>
       </Card>
     );
   }
 }
-
-export default MessageCard;
+const mapStateToProps = state => {
+  return {
+      loggedInUsername: state.auth.login.result.username
+  };
+};
+export default connect(mapStateToProps)(MessageCard);
 
 

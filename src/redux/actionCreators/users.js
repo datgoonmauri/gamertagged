@@ -1,5 +1,5 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
-import { GETUSER, POSTUSER, DELETEUSER } from "../actionTypes";
+import { GETUSER, POSTUSER, DELETEUSER, PUTUSERIMAGE } from "../actionTypes";
 import { login } from "../stateReducers/auth";
 
 const url = domain + "/users";
@@ -74,4 +74,33 @@ export const deleteUser = () => (dispatch, getState) => {
     .catch(err => {
       return Promise.reject(dispatch({ type: DELETEUSER.FAIL, payload: err }));
     });
+}
+
+const _putUserImage = (formData) => (dispatch, getState) => {
+  dispatch({ type: PUTUSERIMAGE.START });
+  
+  const { username, token } = getState().auth.login.result;
+  
+  return fetch(url + "/" + username + "/picture", {
+    method: "PUT",
+    headers: { Authorization: "Bearer " + token, Accept: "application/json" },
+    body: formData
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: PUTUSERIMAGE.SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(dispatch({ type: PUTUSERIMAGE.FAIL, payload: err }));
+    });
+}
+
+export const putUserImage = (formData) => (dispatch, getState) => {
+  return dispatch(_putUserImage(formData)).then(() => {
+    const username = getState().auth.login.result.username
+    return dispatch(getUser(username))
+  })
 }
