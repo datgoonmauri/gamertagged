@@ -3,7 +3,6 @@ import MessageCard from "./MessageCard";
 import { withAsyncAction } from "../HOCs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentSlash } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./MessageList.css";
@@ -35,13 +34,7 @@ class MessageList extends React.Component {
               marginTop: "20px"
             }}
           >
-            <p style={{ marginTop: "15px" }}>
-              {" "}
-              You Have No Messages{" "}
-              {/* <Link to={`/messagefeed/${this.props.username}`}>
-            Post One Now
-          </Link>{" "} */}
-            </p>
+            <p style={{ marginTop: "15px" }}> You Have No Messages </p>
             <FontAwesomeIcon
               icon={faCommentSlash}
               size="8x"
