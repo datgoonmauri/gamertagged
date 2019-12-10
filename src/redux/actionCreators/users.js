@@ -1,6 +1,7 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import { GETUSER, POSTUSER, DELETEUSER, PUTUSERIMAGE } from "../actionTypes";
 import { login } from "../stateReducers/auth";
+import { push } from "connected-react-router";
 
 const url = domain + "/users";
 
@@ -43,17 +44,12 @@ const _postUser = registerData => dispatch => {
       return Promise.reject(dispatch({ type: POSTUSER.FAIL, payload: err }));
     });
 };
-
-export const postUser = registerData => dispatch => {
-  return dispatch(_postUser(registerData)).then(() =>
-    dispatch(
-      login({
-        username: registerData.username,
-        password: registerData.password
-      })
-    )
-  );
+export const postUser = registerData => (dispatch, getState) => {
+  
+  return dispatch(_postUser(registerData)).then(() => dispatch(push("/profile/:username")));
 };
+
+
 
 export const deleteUser = () => (dispatch, getState) => {
   dispatch({ type: DELETEUSER.START });
