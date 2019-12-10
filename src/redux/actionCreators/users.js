@@ -1,6 +1,6 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import { GETUSER, POSTUSER, DELETEUSER, PUTUSERIMAGE } from "../actionTypes";
-import { login } from "../stateReducers/auth";
+// import { login } from "../stateReducers/auth";
 import { push } from "connected-react-router";
 
 const url = domain + "/users";
@@ -45,11 +45,10 @@ const _postUser = registerData => dispatch => {
     });
 };
 export const postUser = registerData => (dispatch, getState) => {
-  
-  return dispatch(_postUser(registerData)).then(() => dispatch(push("/profile/:username")));
+  return dispatch(_postUser(registerData)).then(() =>
+    dispatch(push("/profile/:username"))
+  );
 };
-
-
 
 export const deleteUser = () => (dispatch, getState) => {
   dispatch({ type: DELETEUSER.START });
@@ -70,13 +69,13 @@ export const deleteUser = () => (dispatch, getState) => {
     .catch(err => {
       return Promise.reject(dispatch({ type: DELETEUSER.FAIL, payload: err }));
     });
-}
+};
 
-const _putUserImage = (formData) => (dispatch, getState) => {
+const _putUserImage = formData => (dispatch, getState) => {
   dispatch({ type: PUTUSERIMAGE.START });
-  
+
   const { username, token } = getState().auth.login.result;
-  
+
   return fetch(url + "/" + username + "/picture", {
     method: "PUT",
     headers: { Authorization: "Bearer " + token, Accept: "application/json" },
@@ -90,13 +89,15 @@ const _putUserImage = (formData) => (dispatch, getState) => {
       });
     })
     .catch(err => {
-      return Promise.reject(dispatch({ type: PUTUSERIMAGE.FAIL, payload: err }));
+      return Promise.reject(
+        dispatch({ type: PUTUSERIMAGE.FAIL, payload: err })
+      );
     });
-}
+};
 
-export const putUserImage = (formData) => (dispatch, getState) => {
+export const putUserImage = formData => (dispatch, getState) => {
   return dispatch(_putUserImage(formData)).then(() => {
-    const username = getState().auth.login.result.username
-    return dispatch(getUser(username))
-  })
-}
+    const username = getState().auth.login.result.username;
+    return dispatch(getUser(username));
+  });
+};

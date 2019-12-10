@@ -4,8 +4,6 @@ import { withAsyncAction } from "../HOCs";
 import { Button, Form, FormInput, FormGroup } from "shards-react";
 import "./LoginForm.css";
 
-import { connect } from "../HOCs";
-
 class RegisterForm extends React.Component {
   state = { username: "", password: "", displayName: "" };
 
@@ -13,7 +11,6 @@ class RegisterForm extends React.Component {
     e.preventDefault();
     this.props.postUser(this.state);
   };
-
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -70,4 +67,3 @@ class RegisterForm extends React.Component {
 }
 
 export default withAsyncAction("users", "postUser")(RegisterForm);
-
