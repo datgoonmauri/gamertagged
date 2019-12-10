@@ -1,6 +1,9 @@
 import React from "react";
 import MessageCard from "./MessageCard";
 import { withAsyncAction } from "../HOCs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCommentSlash } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./MessageList.css";
@@ -17,12 +20,36 @@ class MessageList extends React.Component {
     }
   }
   render() {
-    // if (this.props.result.count === 0) {
-    //   return <p> You Have No Messages </p>;
-    // }
-
     if (this.props.result === null) {
       return <Spinner style={{ display: "flex", justifyContent: "center" }} />;
+    }
+    if (this.props.result.count === 0) {
+      return (
+        <>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "20px"
+            }}
+          >
+            <p style={{ marginTop: "15px" }}>
+              {" "}
+              You Have No Messages{" "}
+              {/* <Link to={`/messagefeed/${this.props.username}`}>
+            Post One Now
+          </Link>{" "} */}
+            </p>
+            <FontAwesomeIcon
+              icon={faCommentSlash}
+              size="8x"
+              style={{ marginTop: "15px", opacity: 0.5 }}
+            ></FontAwesomeIcon>
+          </div>
+        </>
+      );
     }
     return (
       this.props.result &&
