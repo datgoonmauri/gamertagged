@@ -12,7 +12,8 @@ import {
   CardBody,
   CardFooter
 } from "shards-react";
-import DeleteUserButton from "../components/DeleteUserButton";
+import DeleteUserButton from "../components/DeleteUserButton"
+import UploadImage from "../components/UploadImage"
 
 class UserCard extends React.Component {
   componentDidMount() {
@@ -40,7 +41,7 @@ class UserCard extends React.Component {
               top
               src={
                 user.pictureLocation
-                  ? user.pictureLocation
+                  ? "https://kwitter-api.herokuapp.com" + user.pictureLocation
                   : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
               }
               className="cardImg"
@@ -57,6 +58,7 @@ class UserCard extends React.Component {
               <p>Created: {new Date(user.createdAt).toDateString()}</p>
               <p>Last Updated: {new Date(user.updatedAt).toDateString()}</p>
               <DeleteUserButton username={this.props.username} />
+              <UploadImage username={this.props.username}/>
             </CardFooter>
           </Card>
         </div>

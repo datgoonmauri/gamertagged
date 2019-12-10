@@ -4,6 +4,7 @@ import { Card, CardBody, CardSubtitle } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import DeleteMessage from "../components/DeleteMessage";
+import { connect } from "../HOCs";
 
 class MessageCard extends React.Component {
   render() {
@@ -33,5 +34,11 @@ class MessageCard extends React.Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+      loggedInUsername: state.auth.login.result.username
+  };
+};
+export default connect(mapStateToProps)(MessageCard);
 
-export default MessageCard;
+

@@ -56,7 +56,7 @@ export const postMessage = postMessageBody => (dispatch, getState) => {
   );
 };
 
-export const deleteMessage = (messageId) => (dispatch, getState) => {
+const _deleteMessage = (messageId) => (dispatch, getState) => {
   dispatch({
     type: DELETEMESSAGE.START
   });
@@ -82,3 +82,8 @@ export const deleteMessage = (messageId) => (dispatch, getState) => {
       );
     });
 };
+export const deleteMessage = (messageId) => (dispatch, getState) => {
+  return dispatch(_deleteMessage(messageId)).then(() => {
+    return dispatch(getMessages())
+  })
+}
