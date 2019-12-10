@@ -83,7 +83,8 @@ const _deleteMessage = (messageId) => (dispatch, getState) => {
     });
 };
 export const deleteMessage = (messageId) => (dispatch, getState) => {
+  const username = getState().auth.login.result.username;
   return dispatch(_deleteMessage(messageId)).then(() => {
-    return dispatch(getMessages())
+    return dispatch(getMessages(username))
   })
 }

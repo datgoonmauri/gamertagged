@@ -27,7 +27,7 @@ class MessageCard extends React.Component {
             <p style={{ fontSize: "14px" }}>
               {new Date(this.props.createdAt).toDateString()}
             </p>
-            <DeleteMessage messageId={this.props.messageId} />
+            {this.props.username === this.props.loggedInUsername && (<DeleteMessage messageId={this.props.messageId} />)}
           </div>
         </CardBody>
       </Card>
