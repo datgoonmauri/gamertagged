@@ -1,0 +1,7 @@
+.MessageCard {
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 2px 2px 3px black;
+ outline: #00356b;
+ 
+}

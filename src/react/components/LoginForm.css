@@ -1,0 +1,17 @@
+#login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20em;
+  margin: auto;
+}
+
+#submit {
+  margin-top: 20px;
+}
+
+#error {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 20px;
+}
