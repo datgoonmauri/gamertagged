@@ -1,4 +1,4 @@
-import { DELETEMESSAGE } from "../../actionTypes";
+import { DELETEUSERMESSAGE } from "../../actionTypes";
 import { withAsyncReducer } from "../../HORs";
 
 const initialState = {
@@ -7,11 +7,11 @@ const initialState = {
   error: null
 };
 
-const deleteMessage = (state = initialState, action) => {
+const deleteUserMessage = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default withAsyncReducer(DELETEMESSAGE, deleteMessage);
+export default withAsyncReducer(DELETEUSERMESSAGE, deleteUserMessage);
