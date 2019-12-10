@@ -17,10 +17,18 @@ class MessageCard extends React.Component {
           <p style={{ fontSize: "20px", fontWeight: "bold" }}>
             {this.props.text}
           </p>
-          <p style={{ fontSize: "14px" }}>
-            {new Date(this.props.createdAt).toDateString()}
-          </p>
-          {this.props.username === this.props.loggedInUsername && (<DeleteMessage messageId={this.props.messageId} />)}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between"
+            }}
+          >
+            <p style={{ fontSize: "14px" }}>
+              {new Date(this.props.createdAt).toDateString()}
+            </p>
+            <DeleteMessage messageId={this.props.messageId} />
+          </div>
         </CardBody>
       </Card>
     );
