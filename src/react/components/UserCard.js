@@ -2,17 +2,11 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import { withAsyncAction } from "../HOCs";
-import { Spinner, UploadUserPic } from ".";
+import { Spinner } from ".";
 import { Link } from ".";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardImg,
-  CardBody,
-  CardFooter
-} from "shards-react";
+import { Card, CardTitle, CardImg, CardBody, CardFooter } from "shards-react";
 import DeleteUserButton from "../components/DeleteUserButton";
+import UploadImage from "../components/UploadImage";
 
 class UserCard extends React.Component {
   componentDidMount() {
@@ -35,16 +29,16 @@ class UserCard extends React.Component {
       <div id="container">
         <div className="container">
           <Card style={{ maxWidth: "300px" }}>
-            <CardHeader className="header"></CardHeader>
-            <img
+            <CardImg
               top
               src={
                 user.pictureLocation
-                  ? user.pictureLocation
-                  : <UploadUserPic username={this.props.username} />
+                  ? "https://kwitter-api.herokuapp.com" + user.pictureLocation
+                  : "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png"
               }
               className="cardImg"
             />
+            <UploadImage username={this.props.username} />
             <CardBody>
               <Link to={`/profile/${this.props.username}`}>
                 <CardTitle className="title">{user.displayName}</CardTitle>
@@ -53,11 +47,17 @@ class UserCard extends React.Component {
                 {user.about ? user.about : "You don't have a bio yet"}
               </div>
             </CardBody>
-            <CardFooter>
+            <CardFooter
+            // style={{
+            //   display: "flex",
+            //   flexDirection: "column",
+            //   justifyContent: "space-evenly"
+            // }}
+            >
               <p>Created: {new Date(user.createdAt).toDateString()}</p>
               <p>Last Updated: {new Date(user.updatedAt).toDateString()}</p>
-              <DeleteUserButton username={ this.props.username } />
-              <UploadUserPic username={this.props.username} />
+
+              <DeleteUserButton username={this.props.username} />
             </CardFooter>
           </Card>
         </div>

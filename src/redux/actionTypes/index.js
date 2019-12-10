@@ -20,3 +20,10 @@ export const REMOVELIKE = createActionTypes("REMOVELIKE");
 
 export const PUTUSERPIC = createActionTypes("PUTUSERPIC");
 export const GETUSERPIC = createActionTypes("GETUSERPIC")
+export const DELETEUSERMESSAGE = createActionTypes("DELETEUSERMESSAGE");
+
+
+
+export const PUTUSERIMAGE = createActionTypes("PUTUSERIMAGE");
+export const REGISTERUSERTHENGOTOHOMEPAGE = createActionTypes("REGISTERUSERTHENGOTOHOMEPAGE");
+

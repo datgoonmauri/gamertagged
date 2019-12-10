@@ -1,23 +1,12 @@
 import React from "react";
 import MessageCard from "./MessageCard";
 import { withAsyncAction } from "../HOCs";
-
-// const messages = [
-//   {
-//     id: 938,
-//     text: "This is my second message!",
-//     username: "testuser",
-//     createdAt: "2019-11-18T16:07:42.936Z",
-//     likes: []
-//   },
-//   {
-//     id: 937,
-//     text: "Hello World!",
-//     username: "testuser",
-//     createdAt: "2019-11-18T15:52:56.879Z",
-//     likes: []
-//   }
-// ];
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCommentSlash } from "@fortawesome/free-solid-svg-icons";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "shards-ui/dist/css/shards.min.css";
+import "./MessageList.css";
+import { Spinner } from ".";
 
 class MessageList extends React.Component {
   componentDidMount() {
@@ -25,13 +14,36 @@ class MessageList extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
     if (this.props.username !== prevProps.username) {
       this.props.getMessages(this.props.username);
     }
   }
-
   render() {
+    if (this.props.result === null) {
+      return <Spinner style={{ display: "flex", justifyContent: "center" }} />;
+    }
+    if (this.props.result.count === 0) {
+      return (
+        <>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "20px"
+            }}
+          >
+            <p style={{ marginTop: "15px" }}> You Have No Messages </p>
+            <FontAwesomeIcon
+              icon={faCommentSlash}
+              size="8x"
+              style={{ marginTop: "15px", opacity: 0.5 }}
+            ></FontAwesomeIcon>
+          </div>
+        </>
+      );
+    }
     return (
       this.props.result &&
       this.props.result.messages.map(message => {

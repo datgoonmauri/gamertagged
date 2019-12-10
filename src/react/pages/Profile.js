@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MessageList, UserCard,UploadUserPic } from "../components";
+import { Menu, MessageList, UserCard } from "../components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./Profile.css";
@@ -13,7 +13,6 @@ class Profile extends React.Component {
         <div className="container">
           <div className="UserCard">
             <UserCard username={this.props.match.params.username} />
-            <img username={this.props.match.params.username} />
           </div>
           <div className="MessageList">
             <h4 style={{ margin: "auto" }}> Your Posts </h4>{" "}

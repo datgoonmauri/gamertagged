@@ -13,4 +13,8 @@ pages:
   only:
     - master
 variables:
+<<<<<<< HEAD
   PUBLIC_URL: "/se/fe/final-projects/assessment---kwitter-frontend"
+=======
+  PUBLIC_URL: https://dbirkbeck217.gitlab.io/assessment---kwitter-frontend/
+>>>>>>> master/master

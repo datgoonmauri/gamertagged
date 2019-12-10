@@ -13,4 +13,9 @@ const deleteMessage = (state = initialState, action) => {
       return state;
   }
 };
+<<<<<<< HEAD
 export default withAsyncReducer(DELETEMESSAGE, deleteMessage);
+=======
+
+export default withAsyncReducer(DELETEMESSAGE, deleteMessage);
+>>>>>>> master/master
