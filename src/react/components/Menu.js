@@ -8,7 +8,7 @@ import {
   faUserCircle,
   faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
-import { withAsyncAction } from "../HOCs";
+import { withAsyncAction, connect } from "../HOCs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./Menu.css";
@@ -66,5 +66,12 @@ class Menu extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    username: state.auth.login.result.username
+  };
+};
 
-export default withAsyncAction("auth", "logout")(Menu);
+export default connect(mapStateToProps)(
+  withAsyncAction("auth", "logout")(Menu)
+);

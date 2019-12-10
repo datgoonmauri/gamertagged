@@ -12,8 +12,8 @@ import {
   CardBody,
   CardFooter
 } from "shards-react";
-import DeleteUserButton from "../components/DeleteUserButton"
-import UploadImage from "../components/UploadImage"
+import DeleteUserButton from "../components/DeleteUserButton";
+import UploadImage from "../components/UploadImage";
 
 class UserCard extends React.Component {
   componentDidMount() {
@@ -57,8 +57,8 @@ class UserCard extends React.Component {
             <CardFooter>
               <p>Created: {new Date(user.createdAt).toDateString()}</p>
               <p>Last Updated: {new Date(user.updatedAt).toDateString()}</p>
+              <UploadImage username={this.props.username} />
               <DeleteUserButton username={this.props.username} />
-              <UploadImage username={this.props.username}/>
             </CardFooter>
           </Card>
         </div>
