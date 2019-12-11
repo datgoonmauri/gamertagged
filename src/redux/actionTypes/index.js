@@ -17,5 +17,7 @@ export const GETUSER = createActionTypes("GETUSER");
 export const POSTUSER = createActionTypes("POSTUSER");
 export const DELETEUSER = createActionTypes("DELETEUSER");
 export const PUTUSERIMAGE = createActionTypes("PUTUSERIMAGE");
+export const ADDLIKE = createActionTypes("ADDLIKE");
+// export const REMOVELIKE = createActionTypes("REMOVELIKE");
 export const REGISTERUSERTHENGOTOHOMEPAGE = createActionTypes("REGISTERUSERTHENGOTOHOMEPAGE");
 

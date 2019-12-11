@@ -11,7 +11,7 @@ class DeleteMessage extends React.Component {
       "Are you sure you want to delete your post?"
     );
     if (confirmed) {
-      this.props.deleteMessage(this.props.messageId);
+      this.props.deleteUserMessage(this.props.messageId);
     }
   };
 
@@ -39,5 +39,5 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(
-  withAsyncAction("messages", "deleteMessage")(DeleteMessage)
+  withAsyncAction("messages", "deleteUserMessage")(DeleteMessage)
 );

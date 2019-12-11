@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import DeleteMessage from "../components/DeleteMessage";
 import { connect } from "../HOCs";
+import ToggleLike from "../components/ToggleLike"
 
 class MessageCard extends React.Component {
   render() {
@@ -28,6 +29,8 @@ class MessageCard extends React.Component {
               {new Date(this.props.createdAt).toDateString()}
             </p>
             {this.props.username === this.props.loggedInUsername && (<DeleteMessage messageId={this.props.messageId} />)}
+            
+            <ToggleLike messageId={this.props.id} />
           </div>
         </CardBody>
       </Card>
