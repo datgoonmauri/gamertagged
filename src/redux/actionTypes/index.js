@@ -12,18 +12,10 @@ export const LOGOUT = createActionTypes("LOGOUT");
 export const GETMESSAGES = createActionTypes("GETMESSAGES");
 export const POSTMESSAGE = createActionTypes("POSTMESSAGE");
 export const DELETEMESSAGE = createActionTypes("DELETEMESSAGE");
+export const DELETEUSERMESSAGE = createActionTypes("DELETEUSERMESSAGE");
 export const GETUSER = createActionTypes("GETUSER");
 export const POSTUSER = createActionTypes("POSTUSER");
-export const ADDLIKE = createActionTypes("ADDLIKE");
 export const DELETEUSER = createActionTypes("DELETEUSER");
-export const REMOVELIKE = createActionTypes("REMOVELIKE");
-
-export const PUTUSERPIC = createActionTypes("PUTUSERPIC");
-export const GETUSERPIC = createActionTypes("GETUSERPIC")
-export const DELETEUSERMESSAGE = createActionTypes("DELETEUSERMESSAGE");
-
-
-
 export const PUTUSERIMAGE = createActionTypes("PUTUSERIMAGE");
 export const REGISTERUSERTHENGOTOHOMEPAGE = createActionTypes("REGISTERUSERTHENGOTOHOMEPAGE");
 

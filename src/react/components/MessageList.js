@@ -48,27 +48,19 @@ class MessageList extends React.Component {
       this.props.result &&
       this.props.result.messages.map(message => {
         return (
-          <MessageCard
-            key={message.id}
-            username={message.username}
-            text={message.text}
-            createdAt={message.createdAt}
-            id={message.id}
-            likes={message.likes}
-          />
+          <div className="MessageCard">
+            <MessageCard
+              key={message.id}
+              username={message.username}
+              text={message.text}
+              createdAt={message.createdAt}
+              messageId={message.id}
+            />
+          </div>
         );
       })
     );
   }
 }
 
-/*
-mapStateToProps
-  loading
-  error
-  result
-
-mapDispatchToProps
-  getMessages
-*/
 export default withAsyncAction("messages", "getMessages")(MessageList);
