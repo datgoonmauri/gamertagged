@@ -13,4 +13,4 @@ pages:
   only:
     - master
 variables:
-  PUBLIC_URL: https://dbirkbeck217.gitlab.io/kwitter_portfolio/Register
+  PUBLIC_URL: https://dbirkbeck217.gitlab.io/kwitter_portfolio/
