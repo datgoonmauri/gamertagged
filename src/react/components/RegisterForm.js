@@ -50,6 +50,7 @@ class RegisterForm extends React.Component {
               onChange={this.handleChange}
             />
           </FormGroup>
+
           <Button theme="primary" type="submit" disabled={loading} id="submit">
             Register
           </Button>
