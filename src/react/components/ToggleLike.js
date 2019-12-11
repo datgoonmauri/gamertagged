@@ -1,29 +1,41 @@
 import React from "react";
 import { Button } from "shards-react";
-import "./DeleteMessage.css";
-import { withAsyncAction } from "../HOCs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { toggleLike } from "../../redux/actionCreators/";
+import { connect } from "../HOCs";
 
 class ToggleLike extends React.Component {
-  handleLike = event => {
-    console.log("liked!");
-    this.props.addLike(this.props.messageId);
+  handleToggleLike = event => {
+    this.props.toggleLike(this.props.messageId);
   };
 
   render() {
+    const isLiked = this.props.likes.find(
+      like => like.username === this.props.loggedInUsername
+    );
     return (
-      <React.Fragment>
-        <Button
-          outline
-          className="like"
-          theme="primary"
-          size="sm"
-          onClick={this.handleLike}
-        >
-          Like/Unlike
-        </Button>
-      </React.Fragment>
+      <Button
+        outline
+        className="like"
+        theme="primary"
+        size="sm"
+        onClick={this.handleToggleLike}
+      >
+        <FontAwesomeIcon icon={faThumbsUp} size="lg"></FontAwesomeIcon>{" "}
+        {isLiked ? "Unlike" : "Like"}
+      </Button>
     );
   }
 }
 
-export default withAsyncAction("likes", "addLike")(ToggleLike);
+const mapStateToProps = state => {
+  return {
+    loggedInUsername: state.auth.login.result.username
+  };
+};
+const mapDispatchToProps = {
+  toggleLike
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToggleLike);
