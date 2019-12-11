@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import DeleteMessage from "../components/DeleteMessage";
 import { connect } from "../HOCs";
+import ToggleLike from "../components/ToggleLike";
 
 class MessageCard extends React.Component {
   render() {
@@ -27,7 +28,14 @@ class MessageCard extends React.Component {
             <p style={{ fontSize: "14px" }}>
               {new Date(this.props.createdAt).toDateString()}
             </p>
-            {this.props.username === this.props.loggedInUsername && (<DeleteMessage messageId={this.props.messageId} />)}
+            <p> Likes: {this.props.likes.length}</p>
+            <ToggleLike messageId={this.props.id} likes={this.props.likes} />
+            {this.props.username === this.props.loggedInUsername && (
+              <DeleteMessage
+                messageId={this.props.id}
+                username={this.props.username}
+              />
+            )}
           </div>
         </CardBody>
       </Card>
@@ -36,9 +44,7 @@ class MessageCard extends React.Component {
 }
 const mapStateToProps = state => {
   return {
-      loggedInUsername: state.auth.login.result.username
+    loggedInUsername: state.auth.login.result.username
   };
 };
 export default connect(mapStateToProps)(MessageCard);
-
-
