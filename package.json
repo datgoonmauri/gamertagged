@@ -1,7 +1,7 @@
 {
   "name": "kwitter",
   "version": "0.1.0",
-  "homepage": "https://dbirkbeck217.gitlab.io/kwitter_portfolio/",
+  "homepage": "https://dbirkbeck217.gitlab.io/assessment---kwitter-frontend/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
