@@ -39,7 +39,6 @@ const _postUser = registerData => dispatch => {
         payload: result
       });
     })
-
     .catch(err => {
       return Promise.reject(dispatch({ type: POSTUSER.FAIL, payload: err }));
     });

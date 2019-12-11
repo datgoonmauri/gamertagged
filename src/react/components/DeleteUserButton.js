@@ -21,7 +21,11 @@ class DeleteUserButton extends React.Component {
     return (
       <React.Fragment>
         {this.props.username === this.props.loggedInUsername && (
+<<<<<<< HEAD
+          <Button 
+=======
           <Button
+>>>>>>> master/master
             outline
             theme="danger"
             size="sm"

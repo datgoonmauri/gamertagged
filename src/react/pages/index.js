@@ -1,7 +1,7 @@
 import Home from "./Home";
 import Profile from "./Profile";
 import NotFound from "./NotFound";
-import MessageFeed from "./MessageFeed.js";
+import MessageFeed from "./MessageFeed"
 import Register from "./Register";
 
 export default {

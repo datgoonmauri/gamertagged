@@ -1,4 +1,4 @@
-import { LOGOUT } from "../../actionTypes";
+import { PUTUSERPIC } from "../../actionTypes";
 import { withAsyncReducer } from "../../HORs";
 
 const initialState = {
@@ -7,11 +7,11 @@ const initialState = {
   error: null
 };
 
-const logout = (state = initialState, action) => {
+const putUserPic = (state = initialState, action) => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-export default withAsyncReducer(LOGOUT, logout);
+export default withAsyncReducer(PUTUSERPIC, putUserPic);

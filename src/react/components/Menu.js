@@ -71,7 +71,6 @@ class Menu extends React.Component {
     );
   }
 }
-
 const mapStateToProps = state => {
   return {
     username: state.auth.login.result && state.auth.login.result.username
