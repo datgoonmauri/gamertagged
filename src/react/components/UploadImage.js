@@ -23,7 +23,7 @@ class UploadImage extends React.Component {
             style={{ display: "flex", flexDirection: "row" }}
           >
             <FormInput
-              style={{ borderRadius: "0" }}
+              style={{ borderRadius: "0", paddingTop: "10px" }}
               squared
               size="sm"
               type="file"

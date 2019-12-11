@@ -48,11 +48,11 @@ class UserCard extends React.Component {
               </div>
             </CardBody>
             <CardFooter
-            // style={{
-            //   display: "flex",
-            //   flexDirection: "column",
-            //   justifyContent: "space-evenly"
-            // }}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly"
+              }}
             >
               <p>Created: {new Date(user.createdAt).toDateString()}</p>
               <p>Last Updated: {new Date(user.updatedAt).toDateString()}</p>
