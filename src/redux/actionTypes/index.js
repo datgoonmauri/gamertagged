@@ -10,6 +10,9 @@ const createActionTypes = actionName => {
 export const LOGIN = createActionTypes("LOGIN");
 export const LOGOUT = createActionTypes("LOGOUT");
 export const GETMESSAGES = createActionTypes("GETMESSAGES");
+export const GETMOREMESSAGES = createActionTypes("GETMOREMESSAGES");
+export const GETMESSAGE = createActionTypes("GETMESSAGE");
+
 export const POSTMESSAGE = createActionTypes("POSTMESSAGE");
 export const DELETEMESSAGE = createActionTypes("DELETEMESSAGE");
 export const DELETEUSERMESSAGE = createActionTypes("DELETEUSERMESSAGE");

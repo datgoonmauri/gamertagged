@@ -1,12 +1,14 @@
 import React from "react";
 import MessageCard from "./MessageCard";
-import { withAsyncAction } from "../HOCs";
+import { withAsyncAction, connect } from "../HOCs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCommentSlash } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./MessageList.css";
 import { Spinner } from ".";
+import {getMoreMessages} from "../../redux/actionCreators";
+import InfiniteScroll from "react-infinite-scroller";
 
 class MessageList extends React.Component {
   componentDidMount() {
@@ -18,6 +20,18 @@ class MessageList extends React.Component {
       this.props.getMessages(this.props.username);
     }
   }
+  loadMore = () => {
+    this.props.getMoreMessages(this.props.username);
+  };
+
+  hasMore = () => {
+    return (
+      this.props.result &&
+      this.props.result.messages.length < this.props.result.count
+    );
+  };
+
+
   render() {
     if (this.props.result === null) {
       return <Spinner style={{ display: "flex", justifyContent: "center" }} />;
@@ -45,7 +59,18 @@ class MessageList extends React.Component {
       );
     }
     return (
-      this.props.result &&
+      <InfiniteScroll
+      pageStart={0}
+      loadMore={this.loadMore}
+      hasMore={this.hasMore()}
+      loader={
+        <div className="loader" key={0}>
+          Loading ...
+        </div>
+      }
+    >
+
+      {this.props.result &&
       this.props.result.messages.map(message => {
         return (
           <div className="MessageCard">
@@ -59,9 +84,15 @@ class MessageList extends React.Component {
             />
           </div>
         );
-      })
+      })}
+      </InfiniteScroll>
     );
   }
 }
-
-export default withAsyncAction("messages", "getMessages")(MessageList);
+const mapDispatchToProps = {
+  getMoreMessages
+};
+export default connect(
+  null,
+  mapDispatchToProps
+)(withAsyncAction("messages", "getMessages")(MessageList));
