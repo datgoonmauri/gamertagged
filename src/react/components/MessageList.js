@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css";
 import "./MessageList.css";
 import { Spinner } from ".";
-import {getMoreMessages} from "../../redux/actionCreators";
+import { getMoreMessages } from "../../redux/actionCreators";
 import InfiniteScroll from "react-infinite-scroller";
 
 class MessageList extends React.Component {
@@ -30,7 +30,6 @@ class MessageList extends React.Component {
       this.props.result.messages.length < this.props.result.count
     );
   };
-
 
   render() {
     if (this.props.result === null) {
@@ -60,31 +59,30 @@ class MessageList extends React.Component {
     }
     return (
       <InfiniteScroll
-      pageStart={0}
-      loadMore={this.loadMore}
-      hasMore={this.hasMore()}
-      loader={
-        <div className="loader" key={0}>
-          Loading ...
-        </div>
-      }
-    >
-
-      {this.props.result &&
-      this.props.result.messages.map(message => {
-        return (
-          <div className="MessageCard">
-            <MessageCard
-              key={message.id}
-              username={message.username}
-              text={message.text}
-              createdAt={message.createdAt}
-              id={message.id}
-              likes={message.likes}
-            />
+        pageStart={0}
+        loadMore={this.loadMore}
+        hasMore={this.hasMore()}
+        loader={
+          <div className="loader" key={0} style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "10px" }}>
+            <Spinner />
           </div>
-        );
-      })}
+        }
+      >
+        {this.props.result &&
+          this.props.result.messages.map(message => {
+            return (
+              <div className="MessageCard">
+                <MessageCard
+                  key={message.id}
+                  username={message.username}
+                  text={message.text}
+                  createdAt={message.createdAt}
+                  id={message.id}
+                  likes={message.likes}
+                />
+              </div>
+            );
+          })}
       </InfiniteScroll>
     );
   }
