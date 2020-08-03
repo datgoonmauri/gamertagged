@@ -8,7 +8,7 @@ class Register extends React.Component {
     return (
       <>
         <Menu />
-        <h1>Kwitter</h1>
+        <h1>GamerTagged</h1>
         <h2>Register for a New Account</h2>
         <RegisterForm />
         <h4>
