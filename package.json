@@ -10,7 +10,7 @@
     "bootstrap": "^4.4.0",
     "connected-react-router": "^6.5.2",
     "history": "^4.10.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "react": "^16.11.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.11.0",
@@ -44,6 +44,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "dependency-cruiser": "^5.4.0"
+    "dependency-cruiser": "^17.3.7"
   }
 }
